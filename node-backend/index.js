@@ -5,13 +5,13 @@ require('dotenv').config();
 const connectDB=require('./config/db');
 const router=require('./routes');
 const webhookController = require('./controller/order/webHook'); 
-const authToken = require('./middleware/authToken');
+
 
 const app=express()
 
 app.use(express.json({
   verify: (req, res, buf) => {
-    req.rawBody = buf.toString(); // Store raw body as a string on the request object
+    req.rawBody = buf.toString(); // Stores raw body as a string on the request object
   }
 }));
 app.use(cors(
@@ -25,6 +25,11 @@ app.use("/api",router)
 
 
 app.post('/webhook', webhookController);
+
+app.get("/",(req,res)=>
+{
+   res.send("Welcome to Backend")
+})
 
 
 
