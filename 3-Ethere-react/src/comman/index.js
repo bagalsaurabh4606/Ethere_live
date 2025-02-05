@@ -1,4 +1,4 @@
-const backendDomain = "http://localhost:2024";
+const backendDomain = "https://ethere-live.onrender.com";
 
 const summaryApi = {
   SignUP: {
