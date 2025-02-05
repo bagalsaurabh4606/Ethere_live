@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "@stripe/stripe-js": "^4.8.0",
+    "backend": "file:..",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
     "dotenv-webpack": "^8.1.0",

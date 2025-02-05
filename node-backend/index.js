@@ -5,9 +5,10 @@ require('dotenv').config();
 const connectDB=require('./config/db');
 const router=require('./routes');
 const webhookController = require('./controller/order/webHook'); 
-
+const path=require("path")
 
 const app=express()
+
 
 app.use(express.json({
   verify: (req, res, buf) => {
@@ -26,12 +27,17 @@ app.use("/api",router)
 
 app.post('/webhook', webhookController);
 
-app.get("/",(req,res)=>
-{
-   res.send("Welcome to Backend")
-})
+// app.get("/",(req,res)=>
+// {
+//    res.send("Welcome to Backend")
+// })
 
-
+//connectivity of path for live website
+const _dirname = path.resolve();
+app.use(express.static(path.join(_dirname, "3-Ethere-react", "dist")));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(_dirname, "3-Ethere-react", "dist", "index.html"));
+});
 
 const PORT= 2024 || process.env.PORT 
 connectDB().then(()=>{

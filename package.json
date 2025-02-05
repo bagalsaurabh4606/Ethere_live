@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon node-backend/index.js",
+    "build": "npm install && npm install --prefix 3-Ethere-react && npm run build --prefix 3-Ethere-react",
+    "start": "nodemon node-backend/index.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "mongoose": "^8.5.1",
     "nodemailer": "^6.9.15",
     "nodemon": "^3.1.4",
+    "path": "^0.12.7",
     "razorpay": "^2.9.4",
     "stripe": "^17.1.0"
   }
