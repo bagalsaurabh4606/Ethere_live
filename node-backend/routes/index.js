@@ -50,6 +50,7 @@ router.post(
 );
 router.delete(
   "/delete-adminproduct",
+  authToken,
   authMiddleware,
   deleteAdminProductController
 );

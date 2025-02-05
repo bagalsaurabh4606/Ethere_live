@@ -61,7 +61,7 @@ const HorizontalCardItems = ({ item }) => {
       <div className={styles.horizontalImageContainer}>
         <img
           className={styles.horizontalItemImage}
-          src={item.image}
+          src={item.image[0]}
           alt="item image"
         />
       </div>
